@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnv6mvp0uf8j7"]
+
+[ext_resource type="Script" uid="uid://dt755w70463fb" path="res://NC/Unit/falling.gd" id="1_7bp5k"]
+
+[node name="Falling" type="Node2D"]
+script = ExtResource("1_7bp5k")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

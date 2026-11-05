@@ -62,10 +62,21 @@ func run_ani_step():
 			if cup.current_ani[0] == cup.anis[cup.current_ani[1]].size():
 				cup.current_ani[0] = 0
 				cup.ani_ended()
-			elif cup.anis[cup.current_ani[1]][cup.current_ani[0]].has("f"):
+			
+			if cup.anis[cup.current_ani[1]][cup.current_ani[0]].has("f"):
 				cup.main_sprite.frame = cup.anis[cup.current_ani[1]][cup.current_ani[0]]["f"]
 			elif cup.anis[cup.current_ani[1]][cup.current_ani[0]].has("fc"):
-				cup.main_sprite.frame_coords = cup.anis[cup.current_ani[1]][cup.current_ani[0]]["fc"]
+				if cup.anis[cup.current_ani[1]][cup.current_ani[0]]["fc"].y is int:
+					cup.main_sprite.frame_coords = cup.anis[cup.current_ani[1]][cup.current_ani[0]]["fc"]
+				else:
+					cup.main_sprite.frame_coords = Vector2(cup.anis[cup.current_ani[1]][cup.current_ani[0]]["fc"][0],cup.anis[cup.current_ani[1]][cup.current_ani[0]]["fc"][1]-0.01+cup.moves["direction"].direction_facing)
+			
+			if cup.moves.has("horz"):
+				cup.moves["horz"].move_tick()
+			
+			#if cup.anis[cup.current_ani[1]][cup.current_ani[0]].has("move"):
+			#	cup.move_direction(cup.anis[cup.current_ani[1]][cup.current_ani[0]]["move"])
+			
 			
 			cup.current_ani[0] = cup.current_ani[0] + 1
 			if cup.current_ani[0] == cup.anis[cup.current_ani[1]].size():

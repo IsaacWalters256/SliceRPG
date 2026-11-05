@@ -1,14 +1,160 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3xfbebfv3wpl"]
+[gd_scene load_steps=20 format=3 uid="uid://b3xfbebfv3wpl"]
 
 [ext_resource type="Script" uid="uid://c1f0h3el18r2" path="res://NC/Unit/PlayerAI.gd" id="1_is3fe"]
 [ext_resource type="Texture2D" uid="uid://deby4x0wxky2v" path="res://Art/01_Hero_Full Sheet.png" id="2_b61ul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b61ul"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g3c2"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyfcx"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gto6"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c3nu"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0bmv"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5fq3"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vucoy"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llrqe"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pp30"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y50k1"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmhcj"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt36k"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5nkc"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul8je"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xye4r"]
+atlas = ExtResource("2_b61ul")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6c3nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b61ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g3c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyfcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gto6")
+}],
+"loop": true,
+"name": &"idle0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c3nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0bmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5fq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vucoy")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llrqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pp30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y50k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmhcj")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt36k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5nkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul8je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xye4r")
+}],
+"loop": true,
+"name": &"idle3",
+"speed": 5.0
+}]
 
 [node name="PlayerAI" type="Node2D"]
 script = ExtResource("1_is3fe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-24, -30)
 texture = ExtResource("2_b61ul")
 centered = false
 hframes = 21
 vframes = 17
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-24, -30)
+sprite_frames = SubResource("SpriteFrames_6c3nu")
+animation = &"idle3"
+centered = false

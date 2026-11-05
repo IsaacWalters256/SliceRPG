@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1mkkq7mk577b"]
+
+[ext_resource type="Script" uid="uid://dqjicfpvniheq" path="res://NC/Unit/idle_move.gd" id="1_7udli"]
+
+[node name="IdleMove" type="Node2D"]
+script = ExtResource("1_7udli")

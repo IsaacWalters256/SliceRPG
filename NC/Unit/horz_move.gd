@@ -1,8 +1,13 @@
 extends Node2D
 
+#when this move is interupted, it can call force movement during certain moves so you keep going forward or what not
+#have different sized ray casts (point them the right way), check the different sizes for how far it can go, if it can go, then go that far in the movement (also can use this for starting the speed out)
+
 var locked = false
 var forced_movement = -1 #-1 is no direction
 var input_movement = -1
+var direction_facing = 0 #forward, left, right, back (0-3)
+
 
 func _ready() -> void:
 	get_parent().moves["horz"] = self

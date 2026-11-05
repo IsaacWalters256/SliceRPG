@@ -1,12 +1,24 @@
 extends Node2D
 
+@onready var sprite = get_node("Sprite2D")
+
+
+
 func _ready() -> void:
 	get_parent().ai = self
 
-var current_action = "idle"
+func ani_frame(which):
+	var to_return = [Vector2(0,0),Vector2(0,0)]
+	if which == "idle":
+		to_return = [Vector2i(0,get_parent().moves["horz"].direction_facing),Vector2i(3,get_parent().moves["horz"].direction_facing)]
+	return to_return
 
-func get_new_ani():
-	return current_action
+var current_action = "idle"
+#current_want?
+
+func going_to_idle():
+	pass
+	#will change parents active_move to a valid move listed
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("basic_attack"):

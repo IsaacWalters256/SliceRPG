@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfroowr2vufaj"]
+
+[ext_resource type="TileSet" uid="uid://d18hraxcferkj" path="res://NC/GP/T_Set_01.tres" id="1_tp4a4"]
+
+[node name="Slice" type="TileMap"]
+tile_set = ExtResource("1_tp4a4")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 262145, 1, -65535, 262145, 1, -65534, 262145, 1, -65533, 524289, 1, 2, 262145, 9, 1, 262145, 9, 0, 262145, 9, 3, 524289, 5, 65539, 524289, 5, 131075, 524289, 5, 65535, 1, 5, 131071, 1, 9, -1, 1, 1, 196607, 1, 9, 65536, 262145, 13, 131072, 262145, 13, 65537, 262145, 13, 131073, 262145, 13, 65538, 262145, 13, 131074, 262145, 13, -65530, 262145, 1, -65529, 262145, 1)

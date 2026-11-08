@@ -27,11 +27,13 @@ func activate():#tell this node that it's the current thing
 			if get_node("4").is_colliding():
 				target = self
 	if target != self:
+		g.ai.run_ani("move")
+		target = get_node("4")
 		g.tw = g.pauser.get_tween(g)
-		var rec_frames = g.ai.ani_frame("move")
-		g.ai.sprite.frame_coords = rec_frames[0]
-		g.tw.tween_property(g.ai.sprite,"frame_coords",rec_frames[1],.75)
-		g.tw.parallel().tween_property(g,"position",g.position+target.target_position,.75)
+		#var rec_frames = g.ai.ani_frame("move")
+		#g.ai.sprite.frame_coords = rec_frames[0]
+		#g.tw.tween_property(g.ai.sprite,"frame_coords",rec_frames[1],.75)
+		g.tw.parallel().tween_property(g,"position",g.position+target.target_position,.15)
 		g.tw.tween_callback(self.deactivate)
 	else:
 		deactivate()

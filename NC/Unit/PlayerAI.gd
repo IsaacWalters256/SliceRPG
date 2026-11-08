@@ -21,15 +21,17 @@ var current_action = "idle"
 func run_ani(which):
 	if which == "idle":
 		get_node("AnimatedSprite2D").play("idle"+str(g.direction_facing))
+	elif which == "move":
+		get_node("AnimatedSprite2D").play("move"+str(g.direction_facing))
 
 func going_to_idle():
 	pass
-	#if Input.is_action_pressed("left"):
-		#g.change_direction(1)
-		#get_parent().active_move = get_parent().moves["horz"]
-	#elif Input.is_action_pressed("right"):
-		#g.change_direction(2)
-		#get_parent().active_move = get_parent().moves["horz"]
+	if Input.is_action_pressed("left"):
+		g.change_direction(1)
+		get_parent().active_move = get_parent().moves["horz"]
+	elif Input.is_action_pressed("right"):
+		g.change_direction(2)
+		get_parent().active_move = get_parent().moves["horz"]
 
 func _process(delta: float) -> void:
 	get_node("Label").text = str(get_node("Sprite2D").frame)
@@ -37,14 +39,14 @@ func _process(delta: float) -> void:
 		g.change_direction(0)
 	elif Input.is_action_just_pressed("left"):
 		g.change_direction(1)
-		#if g.active_move == g.moves["idle"]:
-		#	g.active_move = g.moves["horz"]
-		#	g.active_move.activate()
+		if g.active_move == g.moves["idle"]:
+			g.active_move = g.moves["horz"]
+			g.active_move.activate()
 	elif Input.is_action_just_pressed("right"):
 		g.change_direction(2)
-		#if g.active_move == g.moves["idle"]:
-		#	g.active_move = g.moves["horz"]
-		#	g.moves["horz"].activate()
+		if g.active_move == g.moves["idle"]:
+			g.active_move = g.moves["horz"]
+			g.moves["horz"].activate()
 	elif Input.is_action_just_pressed("up"):
 		g.change_direction(3)
 	

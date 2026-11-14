@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3mc7mp11il8k"]
 
-[ext_resource type="Script" uid="uid://cwyet5ii76pik" path="res://NC/Unit/horz_move.gd" id="1_tjyw5"]
+[ext_resource type="Script" uid="uid://cwyet5ii76pik" path="res://NC/PixSmall/Unit/horz_move.gd" id="1_tjyw5"]
 
 [node name="HorzMove" type="Node2D"]
 script = ExtResource("1_tjyw5")

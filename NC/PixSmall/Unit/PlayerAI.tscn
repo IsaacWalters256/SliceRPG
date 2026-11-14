@@ -1,7 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://b3xfbebfv3wpl"]
+[gd_scene load_steps=39 format=3 uid="uid://b3xfbebfv3wpl"]
 
-[ext_resource type="Script" uid="uid://c1f0h3el18r2" path="res://NC/Unit/PlayerAI.gd" id="1_is3fe"]
+[ext_resource type="Script" uid="uid://c1f0h3el18r2" path="res://NC/PixSmall/Unit/PlayerAI.gd" id="1_is3fe"]
 [ext_resource type="Texture2D" uid="uid://deby4x0wxky2v" path="res://Art/01_Hero_Full Sheet.png" id="2_b61ul"]
+[ext_resource type="PackedScene" uid="uid://d3mc7mp11il8k" path="res://NC/PixSmall/Unit/horz_move.tscn" id="3_3gto6"]
+[ext_resource type="PackedScene" uid="uid://b1mkkq7mk577b" path="res://NC/PixSmall/Unit/idle_move.tscn" id="4_6c3nu"]
+[ext_resource type="PackedScene" uid="uid://c1i41g5sfu3ic" path="res://NC/PixSmall/Unit/tile_jump.tscn" id="5_i0bmv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b61ul"]
 atlas = ExtResource("2_b61ul")
@@ -290,3 +293,9 @@ position = Vector2(-24, -30)
 sprite_frames = SubResource("SpriteFrames_6c3nu")
 animation = &"move3"
 centered = false
+
+[node name="HorzMove" parent="." instance=ExtResource("3_3gto6")]
+
+[node name="IdleMove" parent="." instance=ExtResource("4_6c3nu")]
+
+[node name="TileJump" parent="." instance=ExtResource("5_i0bmv")]

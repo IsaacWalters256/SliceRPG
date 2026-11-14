@@ -3,19 +3,19 @@ extends Node2D
 #when this move is interupted, it can call force movement during certain moves so you keep going forward or what not
 #have different sized ray casts (point them the right way), check the different sizes for how far it can go, if it can go, then go that far in the movement (also can use this for starting the speed out)
 
-@onready var g = get_parent()
+@onready var g = get_parent().get_parent()
 var can_change_direction = true
 
 func _ready() -> void:
-	get_parent().moves["horz"] = self
+	g.moves["horz"] = self
 
 
 func activate():#tell this node that it's the current thing
-	if get_parent().direction_facing == 1:
+	if g.direction_facing == 1:
 		for c in get_children():
 			if c.target_position.x > 0:
 				c.target_position.x = c.target_position.x * -1
-	elif get_parent().direction_facing == 2:
+	elif g.direction_facing == 2:
 		for c in get_children():
 			if c.target_position.x < 0:
 				c.target_position.x = c.target_position.x * -1

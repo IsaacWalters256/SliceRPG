@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1mt3xrubfsw8"]
 
-[ext_resource type="Script" uid="uid://wftc5rgmgpt8" path="res://NC/Unit/direction_4_move.gd" id="1_g3s3j"]
+[ext_resource type="Script" uid="uid://wftc5rgmgpt8" path="res://NC/PixSmall/Unit/direction_4_move.gd" id="1_g3s3j"]
 
 [node name="Direction4Move" type="Node2D"]
 script = ExtResource("1_g3s3j")

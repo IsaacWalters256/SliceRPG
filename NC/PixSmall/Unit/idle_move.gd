@@ -1,10 +1,10 @@
 extends Node2D
 
-@onready var g = get_parent()
+@onready var g = get_parent().get_parent()
 var can_change_direction = true
 
 func _ready() -> void:
-	get_parent().moves["tile_jump"] = self
+	g.moves["idle"] = self
 
 func activate():#tell this node that it's the current thing
 	g.tw = g.pauser.get_tween(g)

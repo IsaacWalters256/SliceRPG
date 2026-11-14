@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxk3u3eblq5np"]
+
+[ext_resource type="Script" uid="uid://cpnnec7sv42dn" path="res://NC/PixSmall/Unit/Unit.gd" id="1_ndv22"]
+[ext_resource type="Script" uid="uid://dpq8mtxks2tie" path="res://NC/PixSmall/Unit/movement_a.gd" id="3_pteb4"]
+
+[node name="Unit" type="Node2D"]
+script = ExtResource("1_ndv22")
+
+[node name="MovementA" type="Node2D" parent="."]
+script = ExtResource("3_pteb4")

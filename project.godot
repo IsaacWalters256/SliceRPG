@@ -17,8 +17,6 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=512
-window/size/viewport_height=300
 window/size/mode=2
 window/stretch/mode="viewport"
 
@@ -73,4 +71,3 @@ look={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-2d/snap/snap_2d_transforms_to_pixel=true

@@ -1,12 +1,12 @@
 extends Node2D
 
-@onready var g = get_parent()
+@onready var g = get_parent().get_parent()
 var can_change_direction = true
 
 func _ready() -> void:
-	get_parent().moves["idle"] = self
+	g.moves["tile_jump"] = self
 
-func activate():#tell this node that it's the current thing
+func activate(towards_camera):#tell this node that it's the current thing
 	g.tw = g.pauser.get_tween(g)
 	#var rec_frames = g.ai.ani_frame("idle")
 	#g.ai.sprite.frame_coords = rec_frames[0]

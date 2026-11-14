@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1i41g5sfu3ic"]
+
+[ext_resource type="Script" uid="uid://d2jahcwqrkp52" path="res://NC/PixSmall/Unit/tile_jump.gd" id="1_iul2n"]
+
+[node name="TileJump" type="Node2D"]
+script = ExtResource("1_iul2n")
